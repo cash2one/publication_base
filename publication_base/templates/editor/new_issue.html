@@ -1,0 +1,70 @@
+{% extends "editor/editor_root.html" %}
+{% load i18n %}
+{% block content %}
+    <br>
+<div id="issue-container">                
+    
+{% comment %}    
+    <div id="form-header">
+        <div id="login-branding"> 
+            <h1>{% trans "New Issue"%}:</h1>
+        </div>
+    </div>    
+{% endcomment %}
+    
+    {% if messages %}
+        <ul class="messagelist">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Issue Content -->
+    <div id="issue-content" class="colM">
+    
+        {% if form.errors and not form.non_field_errors %}
+            <p class="errornote">
+            {% if form.errors.items|length == 1 %}
+                {% trans "Please correct the error below." %}
+            {% else %}
+                {% trans "Please correct the errors below." %}
+            {% endif %}
+            </p>
+        {% endif %}
+
+        {% if form.non_field_errors%}
+            {% for error in form.non_field_errors %}
+            <p class="errornote">
+                {{ error }}
+            </p>
+            {% endfor %}
+        {% endif %}
+
+        <form action="" method="post", id="issue_form">{% csrf_token %}
+             <div class="issue-form-row">
+                {{ form.issue_year.errors }}
+                <label for="id_issue_year" class="required">{{ form.issue_year.label }}:</label>
+                {{ form.issue_year }} 
+              </div>
+            
+             <div class="issue-form-row">
+                {{ form.issue_num.errors }}
+                <label for="id_issue_num" class="required">{{ form.issue_num.label }}:</label>
+                {{ form.issue_num }} 
+              </div>
+
+              <div class="issue-submit-row">
+                <label>&nbsp;</label><input id="add_issue" type="submit" value="{% trans "Add Issue" %}" />
+              </div>
+              
+        </form>
+        <script type="text/javascript">
+            document.getElementById('id_issue_year').focus()
+        </script>
+        
+    </div> 
+</div>
+{% endblock %}

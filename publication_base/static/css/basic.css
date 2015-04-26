@@ -1,0 +1,479 @@
+BODY, TD, P, DIV, SELECT, INPUT, TEXTAREA { 
+	font-family: Tahoma, Arial, Trebuchet MS, Helvetica; font-size: 11px; color: #565656;}
+
+html {
+	background-color: #d1d0d0;
+	height:100%;
+	width:100%;
+}
+
+body {
+	padding:0px;
+	margin: 0px;
+	border-top:2px solid #242424;;
+	width:100%;
+	height:100%;
+	line-height:16px;
+	text-align: center;
+}
+
+html {
+	height: 100%;
+	overflow: auto; /* Otherwise some problems with vertical scroll in IE6 begin */
+}
+
+* html body {
+	height: 100%; /* IE 6 */
+}
+
+html > body { /* For the rest browsers */
+	min-height: 100%;
+	height: auto;
+}
+
+A {text-decoration: none;}
+A:active, A:visited, A:link {color:#231f20; text-decoration:underline;}
+A:hover {color: #231f20; text-decoration:none;}
+A.icon_link {text-decoration: none;}
+
+IMG {border:0px;}
+
+h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+UL {
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#wrapper {
+	background-image:url(/static/images/bg.gif);
+	background-position:top;
+	background-repeat:repeat-x;
+	background-color:#F9F9F8;
+	width:1142px;
+	margin:0px auto;
+	text-align:left;
+	border:0px solid;
+}
+
+#top {
+	padding:0px 0px 0px 0px;
+	margin:0px;
+	height:220px;
+}
+
+#top2 {
+    padding:0px 0px 0px 0px;
+    margin:0px;
+    height:30px;
+}
+
+#logo {
+	float:left;
+	padding:35px 0px 0px 100px;
+}
+
+#lang {
+	float:right;
+	padding:7px 25px 0px 0px;
+}
+
+#menu_wrapper {
+    background-image:url(/static/images/bg_menu.gif);/* menu top and bottom lines */
+    background-position:top;
+    background-repeat:repeat-x;
+    margin:0px;
+    padding-left:25px;
+    height:40px;
+}
+
+/*
+#menu {
+	background-image:url(/static/images/bg_menu.gif);/ * menu top and bottom lines * /
+	background-position:top;
+	background-repeat:repeat-x;
+	margin:0px;
+	padding-left:25px;
+	height:31px;
+}
+*/
+
+#menu LI {margin-right:25px;}
+
+#menu LI, #menu LI A, #menu A {
+	display: inline;
+	line-height:31px;
+	float:left;
+}
+
+#menu LI A:active, #menu LI A:link, #menu LI A:visited {text-decoration:none;}
+#menu LI A:hover {text-decoration:none; color:#565656;}
+
+#act {
+	background-image:url(/static/images/bg_act_red.gif);
+	background-position:top;
+	background-repeat:repeat-x;
+	padding:0 4px 0 4px;}
+
+#act A {text-decoration:none; color:#FFFFFF;}
+
+#act_red {
+    background-image:url(/static/images/bg_act_red.gif);
+    background-position:top;
+    background-repeat:repeat-x;
+    padding:0 4px 0 4px;}
+
+
+/*------------------- CONTENT --------------------------*/
+#header {
+	margin:0px 0px 0px 36px; 
+	width:1024px;
+	background-color: #FFFFFF;
+	padding:10px 24px 0px 24px;
+}
+
+#static {
+	width:1024px;
+	margin:-6px 0px 0px 36px; 
+	padding:0px 24px 0px 24px;
+	min-height: 690px;
+	background-color:#FFFFFF;
+	float:left;
+}
+
+#column_1, #column_2 {
+	background-color:#FFFFFF;
+	border-top:2px solid #f8991c;
+}
+
+#column_1 {
+	width:170px;
+	margin:0px 12px 24px 0px;
+	padding:10px 24px 0px 24px;
+}
+
+#column_2 {
+	width:860px;
+	margin:0px auto 0px; 
+	padding:0px 24px 0px 24px;
+}
+
+#list_of_contents {
+	width:700px;
+	float:left;
+}
+
+#navigation {
+	width:160px;
+	float:left;
+}
+
+.block {padding-bottom:5px;}
+
+.razdel {
+	color:#231f20;
+	text-transform:uppercase;
+	font-size:14px;
+	font-weight:bold;
+}
+
+#column_1 p span {
+	color:#e47100;
+	font-weight:bold;} 
+
+.link:active, .link:visited, .link:link {text-decoration:none;}
+.link:hover {color:#565656;}
+
+#bottom {
+	background-image:url(/static/images/bg_bot.gif);
+	background-position:top;
+	background-repeat:repeat-x;
+	height:63px;
+	padding:60px 0px 0px 0px;
+	clear: both;
+}
+
+p.article_caption {
+	text-align: left;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+p.article_annot {
+	text-align: left;
+	font-size: 11px;
+	font-style: italic;
+}
+
+.hidden { display: none; }
+.unhidden { display: block; }
+
+.fieldWrapper {display:inline-block;}
+
+
+#form-header {
+    background: #bf1600; /*#417690;*/
+    color: black; /*#ffc;*/
+    overflow: hidden;
+}
+
+#login-branding h1{
+    padding: 0 10px;
+    font-size: 18px;
+    margin: 8px 0;
+    font-weight: normal;
+    color: white; /*#f4f379;*/
+}
+
+
+#login-branding h2 {
+    padding: 0 10px;
+    font-size: 14px;
+    margin: -8px 0 8px 0;
+    font-weight: normal;
+    color: white;/*#ffc;*/
+}
+
+/* MESSAGES & ERRORS */
+
+ul.messagelist {
+    padding: 0 0 5px 0;
+    margin: 0;
+}
+
+ul.messagelist li {
+    font-size: 12px;
+    display: block;
+    padding: 4px 5px 4px 25px;
+    margin: 0 0 3px 0;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    background: #ffc url(../img/icon_success.gif) 5px .3em no-repeat;
+}
+
+ul.messagelist li.warning{
+    background-image: url(../img/icon_alert.gif);
+}
+
+ul.messagelist li.error{
+    background-image: url(../img/icon_error.gif);
+}
+
+.errornote {
+    font-size: 12px !important;
+    display: block;
+    padding: 4px 5px 4px 25px;
+    margin: 0 0 3px 0;
+    border: 1px solid red;
+    color: red;
+    background: #ffc url(../img/icon_error.gif) 5px .3em no-repeat;
+}
+
+ul.errorlist {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.errorlist li {
+    font-size: 12px !important;
+    display: block;
+    padding: 4px 5px 4px 25px;
+    margin: 0 0 3px 0;
+    border: 1px solid red;
+    color: white;
+    background: red url(../img/icon_alert.gif) 5px .3em no-repeat;
+}
+
+.errorlist li a {
+    color: white;
+    text-decoration: underline;
+}
+
+td ul.errorlist {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+td ul.errorlist li {
+    margin: 0 !important;
+}
+
+.errors {
+    background: #ffc;
+}
+
+.errors input, .errors select, .errors textarea {
+    border: 1px solid red;
+}
+
+div.system-message {
+    background: #ffc;
+    margin: 10px;
+    padding: 6px 8px;
+    font-size: .8em;
+}
+
+div.system-message p.system-message-title {
+    padding: 4px 5px 4px 25px;
+    margin: 0;
+    color: red;
+    background: #ffc url(../img/icon_error.gif) 5px .3em no-repeat;
+}
+
+.description {
+    font-size: 12px;
+    padding: 5px 0 0 12px;
+}
+
+/* PAGE STRUCTURE */
+
+#login-content {
+    margin: 10px 15px;
+}
+
+#login-header {
+    width: 100%;
+}
+
+
+#login-content-main {
+    float: left;
+    width: 100%;
+}
+
+#login-content-related {
+    float: right;
+    width: 18em;
+    position: relative;
+    margin-right: -19em;
+}
+
+#login-footer {
+    clear: both;
+    padding: 10px;
+}
+
+/* COLUMN TYPES */
+
+.colMS {
+    margin-right: 20em !important;
+}
+
+.colSM {
+    margin-left: 20em !important;
+}
+
+.colSM #content-related {
+    float: left;
+    margin-right: 0;
+    margin-left: -19em;
+}
+
+.colSM #content-main {
+    float: right;
+}
+
+.popup .colM {
+    width: 95%;
+}
+
+.subcol {
+    float: left;
+    width: 46%;
+    margin-right: 15px;
+}
+
+.dashboard #content {
+    width: 500px;
+}
+
+/* LOGIN FORM */
+
+#login-container {
+    background: white;
+    border: 1px solid #ccc;
+    width: 350px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+#login-form {
+    margin-top: 1em;
+}
+
+.form-row {
+    padding: 16px 0;
+    float: left;
+    width: 100%;
+}
+
+.form-row label {
+    float: left;
+    width: 9em;
+    padding-right: 0.5em;
+    line-height: 2em;
+    text-align: right;
+    font-size: 1em;
+    color: #333;
+}
+
+#id_username, #id_password {
+    width: 14em;
+}
+
+.login-submit-row {
+    clear: both;
+    padding: 1em 0 0 9.4em;
+}
+
+
+/* ISSUE FORM */
+
+#issue-container {
+    background: white;
+    /* border: 1px solid #ccc; */
+    width: 350px;
+    min-width: 300px;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#issue-content {
+    margin: 10px 15px;
+}
+
+#issue-form {
+    margin-top: 1em;
+}
+
+.issue-submit-row {
+    clear: both;
+    padding: 1em 0 0 5.4em;
+}
+
+.issue-form-row {
+    padding: 16px 0;
+    float: left;
+    width: 100%;
+}
+
+.issue-form-row label {
+    float: left;
+    width: 5em;
+    padding-right: 0.5em;
+    line-height: 2em;
+    text-align: right;
+    font-size: 1em;
+    color: #333;
+}
+
+#id_issue_year, #id_issue_num {
+    width: 12em;
+}

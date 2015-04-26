@@ -1,0 +1,21 @@
+{% extends "editor/editor_root.html" %}
+{% load i18n %}
+
+
+{% block content %}
+    <div id="navigation">
+        <ul>
+            {% for item in issue_list %}
+                <li> <a href="/editor/{{category}}/{{edition_alias}}/{{ action }}/{{ item.issue_year }}/{{ item.issue_num }}"> {{ item.issue_year }} N {{ item.issue_num }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="list_of_contents">
+        
+        {% block issue_content %}{% endblock %} 
+    
+    
+    </div>
+    
+{% endblock %}

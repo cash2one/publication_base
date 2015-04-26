@@ -1,0 +1,113 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="{{ STATIC_URL }}css/basic.css" rel="stylesheet" type="text/css" />
+        <title>{% trans "Publications KNU" %}</title>
+        <meta name="author" content="Sergey" />
+    </head>
+
+    <body>
+    <div id="wrapper">
+        <!-- languages bar-->
+        <div id="top">
+            <img src="{{ STATIC_URL }}images/header2.jpg" alt="" />
+            <br clear="all" />
+        </div><!-- top -->
+
+        <div id="menu_wrapper">
+        <div style="float: left;">    
+            <ul id="menu">
+                    <li 
+                        {% ifequal category 'herald'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/{{LANGUAGE_CODE}}/{{root_url}}/herald">{% trans "Herald" %}</a>
+                    </li>
+                    <li
+                        {% ifequal category 'journal'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/{{LANGUAGE_CODE}}/{{root_url}}/journal">{% trans "Journal" %}</a>
+                    </li>
+                    <li
+                        {% ifequal category 'conference'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/{{LANGUAGE_CODE}}/{{root_url}}/conference">{% trans "Conference" %}</a>
+                    </li>
+            </ul>
+        </div> <!-- menu -->
+            <div id="lang">
+                <a href="/uk/{{active_url}}"><img src="{{ STATIC_URL }}images/ukr.png" hspace="10"></img></a>
+                <a href="/en/{{active_url}}"><img src="{{ STATIC_URL }}images/eng.png" hspace="10"></img></a>
+            </div><!-- lang -->
+
+            <br clear="all" />
+        </div>  <!-- menu_wrapper -->       
+
+        
+        <div id="header">
+            <!-- <div id="column_2"> -->
+<!--                
+                <p style="text-align: center">
+                    <span style="color: rgb(0, 0, 0); ">
+                        <span style="font-size: 14px">
+                            <strong>{% trans "Taras Shevchenko National University of Kyiv" %}</strong>
+                        </span>
+                    </span>
+                </p>            
+-->
+                <p style="text-align: center">
+                    <span style="color: rgb(0, 0, 0); ">
+                        <span style="font-size: 18px">
+                            <strong>
+                                {% if category == "herald"%}
+                                    {% trans "Bulletin" %}
+                                {% elif category == "journal"%}
+                                    {% trans "Journal" %}
+                                {% elif category == "conference"%}
+                                    {% trans "Conference" %}
+                                {% else%}
+                                    {% trans "Publication" %}
+                                {% endif %}
+                            </strong>    
+                        </span>
+                    </span>
+                </p>
+                <p style="text-align: center">
+                    <span style="color: rgb(0, 0, 0); ">
+                        <span style="font-size: 18px">
+                            <strong>{% trans "of Taras Shevchenko National University of Kyiv" %}</strong>
+                        </span>
+                    </span>
+                </p>
+                <hr style="border: 1px solid #de2c2c;">
+            <!--    <hr style="border: 1px solid #f8991c;"> -->
+            <!-- </div> --> <!-- column_2 -->
+        </div> <!-- header -->
+                <div id="static">
+
+                    {% block content %}{% endblock %}
+                
+                </div><!-- static -->
+            <!-- </div> --> <!-- column_2 -->   
+        <!-- </div> --> <!-- main -->
+        
+        <div id="bottom">
+                <p style="text-align: left">
+                   &nbsp;&nbsp;&nbsp; &copy; 2013 
+                    {% trans "Taras Shevchenko National University of Kyiv" %}.&nbsp; 
+                    {% trans "Support" %}:&nbsp;{% trans "Sergey Polyakov"%}.&nbsp;
+                    {% trans "Email" %}:&nbsp;<a href="mailto:sergey.a.polyakov@gmail.com">sergey.a.polyakov@gmail.com</a>                   
+                </p>
+        </div><!-- bottom -->
+    </div><!-- wrapper -->
+    </body>
+</html>
+

@@ -1,0 +1,461 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-31 19:03+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: .\publ_forms.py:27
+msgid "New issue has been created"
+msgstr "Новий номер створено"
+
+#: .\publ_forms.py:28 .\publ_forms.py:47 .\publ_forms.py:270
+#, fuzzy
+msgid "Issue already exists"
+msgstr "Номер вже існує"
+
+#: .\publ_forms.py:29
+msgid "New issue has been created. Warning: directory with same name exists"
+msgstr "Новий номер створено. Увага: папка для нового номеру вже існує"
+
+#: .\publ_forms.py:30
+msgid "New article has been created"
+msgstr "Нова стаття завантажена"
+
+#: .\publ_forms.py:31
+msgid "Article has been updated"
+msgstr "Стаття змінена"
+
+#: .\publ_forms.py:32
+msgid "Only POST method can be used"
+msgstr "Тільки POST метод може використовуватися"
+
+#: .\publ_forms.py:33
+msgid "Article(s) has been deleted"
+msgstr "Стаття(і) вилучена(і)"
+
+#: .\publ_forms.py:34
+msgid "Article(s) deletion has been canceled"
+msgstr "Вилучення статей відмінене"
+
+#: .\publ_forms.py:48 .\publ_forms.py:271
+msgid "Too many issues"
+msgstr "Дуже багато випусків"
+
+#: .\publ_forms.py:51
+msgid "Issue"
+msgstr "Випуск N"
+
+#: .\publ_forms.py:52
+msgid "Rubric"
+msgstr "Рубріка"
+
+#: .\publ_forms.py:54 .\publ_forms.py:59 .\publ_forms.py:64 .\publ_forms.py:67
+#: .\publ_forms.py:71 .\publ_forms.py:74 .\publ_forms.py:78 .\publ_forms.py:81
+#: .\publ_forms.py:85 .\publ_forms.py:88 .\publ_forms.py:92 .\publ_forms.py:95
+#: .\publ_forms.py:99 .\publ_forms.py:102 .\publ_forms.py:106
+#: .\publ_forms.py:109 .\publ_forms.py:113 .\publ_forms.py:116
+#: .\publ_forms.py:120 .\publ_forms.py:123 .\publ_forms.py:127
+#: .\publ_forms.py:130 .\publ_forms.py:134 .\publ_forms.py:137
+msgid "Last Name"
+msgstr "Прізвище"
+
+#: .\publ_forms.py:57 .\publ_forms.py:61 .\publ_forms.py:65 .\publ_forms.py:68
+#: .\publ_forms.py:72 .\publ_forms.py:75 .\publ_forms.py:79 .\publ_forms.py:82
+#: .\publ_forms.py:86 .\publ_forms.py:89 .\publ_forms.py:93 .\publ_forms.py:96
+#: .\publ_forms.py:100 .\publ_forms.py:103 .\publ_forms.py:107
+#: .\publ_forms.py:110 .\publ_forms.py:114 .\publ_forms.py:117
+#: .\publ_forms.py:121 .\publ_forms.py:124 .\publ_forms.py:128
+#: .\publ_forms.py:131 .\publ_forms.py:135 .\publ_forms.py:138
+msgid "First Name"
+msgstr "Ім'я"
+
+#: .\publ_forms.py:58 .\publ_forms.py:62 .\publ_forms.py:66 .\publ_forms.py:69
+#: .\publ_forms.py:73 .\publ_forms.py:76 .\publ_forms.py:80 .\publ_forms.py:83
+#: .\publ_forms.py:87 .\publ_forms.py:90 .\publ_forms.py:94 .\publ_forms.py:97
+#: .\publ_forms.py:101 .\publ_forms.py:104 .\publ_forms.py:108
+#: .\publ_forms.py:111 .\publ_forms.py:115 .\publ_forms.py:118
+#: .\publ_forms.py:122 .\publ_forms.py:125 .\publ_forms.py:129
+#: .\publ_forms.py:132 .\publ_forms.py:136 .\publ_forms.py:139
+msgid "Middle Name"
+msgstr "По батькові"
+
+#: .\publ_forms.py:142
+msgid "Caption ukr."
+msgstr "Назва укр."
+
+#: .\publ_forms.py:143
+msgid "Caption engl."
+msgstr "Назва англ."
+
+#: .\publ_forms.py:145
+msgid "Abstract ukr."
+msgstr "Стислий виклад укр."
+
+#: .\publ_forms.py:146
+msgid "Abstract engl."
+msgstr "Стислий виклад англ."
+
+#: .\publ_forms.py:147
+msgid "File"
+msgstr "Файл"
+
+#: .\publ_forms.py:209
+#, python-format
+msgid "Issue number %(number)d for %(year)d already exists"
+msgstr "Випуск номер %(number)d за %(year)d рік вже існує"
+
+#: .\publ_forms.py:210
+#, python-format
+msgid ""
+"System error. There are more than one issue number %(number)d for %(year)d."
+msgstr ""
+"Програмна помилка. Існує більш ніж один випуск номер %(number)d за %(year)d."
+
+#: .\publ_forms.py:213
+msgid "Year"
+msgstr "Рік"
+
+#: .\publ_forms.py:215
+msgid "Number"
+msgstr "Номер"
+
+#: .\publ_forms.py:239
+msgid "User has not pass authorization"
+msgstr "Невірний пароль або ім'я користувача"
+
+#: .\publ_forms.py:240
+msgid "System Error: user has rights to edit more than one edition"
+msgstr "Програмна помилка. Користувач може редагувати більш ніж один випск"
+
+#: .\publ_forms.py:275
+msgid "Category"
+msgstr "Категорія"
+
+#: .\publ_forms.py:278 .\templates\about.html.py:28
+msgid "Subject Matter"
+msgstr "Проблематика"
+
+#: .\publ_forms.py:280
+msgid "Fields of science"
+msgstr "Галузь науки"
+
+#: .\views.py:164 .\templates\editor\editor_root.html.py:49
+msgid "New Article"
+msgstr "Додати статтю"
+
+#: .\views.py:208
+msgid "Article was added"
+msgstr "Стаття завантажена"
+
+#: .\views.py:212 .\views.py:400
+msgid "There are errors"
+msgstr "Є помилки"
+
+#: .\views.py:395
+msgid "Article was updated"
+msgstr "Стаття змінена"
+
+#: .\views.py:407
+#, fuzzy
+msgid "Article editing"
+msgstr "Текст статті"
+
+#: .\views.py:482
+msgid "There is/are no article(s) selected. Select an article(s) for deletion."
+msgstr "Стаття не вибрана."
+
+#: .\views.py:579
+msgid "Article(s) was/were deleted"
+msgstr "Стаття(і) вилучена(і)"
+
+#: .\views.py:586
+msgid "Article(s) deleting was/were cancelled"
+msgstr "Вилучення статей відмінене"
+
+#: .\templates\about.html.py:9
+msgid "Edition Name"
+msgstr "Видання"
+
+#: .\templates\about.html.py:16
+msgid "Fields of Science"
+msgstr "Галузь науки"
+
+#: .\templates\about.html.py:36
+msgid "Foundation Year"
+msgstr "Рік заснування"
+
+#: .\templates\about.html.py:44
+msgid "Issues per Year"
+msgstr "Кількість випусків за рік"
+
+#: .\templates\about.html.py:52
+msgid "Government Certificate"
+msgstr "Свідоцтво про державну реєстрацію"
+
+#: .\templates\about.html.py:60
+msgid "VAC Certificate"
+msgstr "Фахова реєстрація у ВАК України"
+
+#: .\templates\about.html.py:68
+msgid "ISSN"
+msgstr "ISSN"
+
+#: .\templates\about.html.py:76
+msgid "Phone"
+msgstr "Телефон"
+
+#: .\templates\about.html.py:84 .\templates\edition_list_root.html.py:107
+#: .\templates\edition_root.html.py:115
+#: .\templates\editor\editor_root.html.py:153
+msgid "Email"
+msgstr "Поштова скринька"
+
+#: .\templates\about.html.py:92
+msgid "Address"
+msgstr "Адреса"
+
+#: .\templates\edition_list.html.py:9
+#: .\templates\editor\editor_root.html.py:77
+msgid "Edition"
+msgstr "Видання"
+
+#: .\templates\edition_list.html.py:9
+msgid "issue count, article count"
+msgstr "кількість номерів, кількість статей"
+
+#: .\templates\edition_list_root.html.py:8 .\templates\edition_root.html.py:7
+msgid "Publications KNU"
+msgstr "Публікації КНУ"
+
+#: .\templates\edition_list_root.html.py:28
+msgid "Herald"
+msgstr "Вісник"
+
+#: .\templates\edition_list_root.html.py:35
+#: .\templates\edition_list_root.html.py:73
+#: .\templates\edition_root.html.py:64
+#: .\templates\editor\editor_root.html.py:103
+msgid "Journal"
+msgstr "Журнали"
+
+#: .\templates\edition_list_root.html.py:42
+#: .\templates\edition_list_root.html.py:75
+#: .\templates\edition_root.html.py:66
+#: .\templates\editor\editor_root.html.py:105
+msgid "Conference"
+msgstr "Конференції"
+
+#: .\templates\edition_list_root.html.py:61
+#: .\templates\edition_list_root.html.py:105
+#: .\templates\edition_root.html.py:113
+#: .\templates\editor\editor_root.html.py:151
+#: .\templates\editor\login.html.py:124
+msgid "Taras Shevchenko National University of Kyiv"
+msgstr "Київський національний університет імені Тараса Шевченка"
+
+#: .\templates\edition_list_root.html.py:71
+#: .\templates\edition_root.html.py:62
+#: .\templates\editor\editor_root.html.py:101
+msgid "Bulletin"
+msgstr "Вісник"
+
+#: .\templates\edition_list_root.html.py:77
+#: .\templates\edition_root.html.py:68
+#: .\templates\editor\editor_root.html.py:107
+msgid "Publication"
+msgstr "Видання"
+
+#: .\templates\edition_list_root.html.py:86
+#: .\templates\edition_root.html.py:77
+#: .\templates\editor\editor_root.html.py:116
+#: .\templates\editor\login.html.py:42
+msgid "of Taras Shevchenko National University of Kyiv"
+msgstr "Київського національного університету імені Тараса Шевченка"
+
+#: .\templates\edition_list_root.html.py:106
+#: .\templates\edition_root.html.py:114
+#: .\templates\editor\editor_root.html.py:152
+msgid "Support"
+msgstr "Технічна підтримика"
+
+#: .\templates\edition_list_root.html.py:106
+#: .\templates\edition_root.html.py:114
+#: .\templates\editor\editor_root.html.py:152
+msgid "Sergey Polyakov"
+msgstr "Сергій Поляков"
+
+#: .\templates\edition_root.html.py:21
+msgid "All Editions"
+msgstr "Всі видання"
+
+#: .\templates\edition_root.html.py:28
+msgid "About"
+msgstr "Про видання"
+
+#: .\templates\edition_root.html.py:35 .\templates\staff.html.py:7
+msgid "Editorial Stuff"
+msgstr "Редакційна колегія"
+
+#: .\templates\edition_root.html.py:42
+msgid "Archive"
+msgstr "Архів номерів"
+
+#: .\templates\edition_root.html.py:86
+#: .\templates\editor\editor_root.html.py:125
+msgid "Series"
+msgstr "Серія"
+
+#: .\templates\issue_content.html.py:8
+#: .\templates\editor\delete_artcl_exec.html.py:7
+#: .\templates\editor\issue_content_del.html.py:18
+#: .\templates\editor\issue_content_edt.html.py:18
+msgid "Issue N"
+msgstr "Випуск N"
+
+#: .\templates\issue_content.html.py:8
+#: .\templates\editor\delete_artcl_exec.html.py:7
+#: .\templates\editor\issue_content_del.html.py:18
+#: .\templates\editor\issue_content_edt.html.py:18
+msgid "year"
+msgstr "рік"
+
+#: .\templates\issue_content.html.py:15
+#: .\templates\editor\delete_artcl_exec.html.py:14
+#: .\templates\editor\issue_content_del.html.py:25
+#: .\templates\editor\issue_content_edt.html.py:25
+msgid "CONTENTS"
+msgstr "ЗМІСТ"
+
+#: .\templates\issue_content.html.py:57
+#: .\templates\editor\delete_artcl_exec.html.py:32
+#: .\templates\editor\issue_content_del.html.py:67
+#: .\templates\editor\issue_content_edt.html.py:52
+msgid "unknown author"
+msgstr "автор невідомий"
+
+#: .\templates\issue_content.html.py:68
+#: .\templates\editor\issue_content_del.html.py:80
+#: .\templates\editor\issue_content_edt.html.py:68
+#, fuzzy
+msgid "issue is empty"
+msgstr "Номер немає статтей."
+
+#: .\templates\issue_content.html.py:71
+#: .\templates\editor\issue_content_del.html.py:83
+#: .\templates\editor\issue_content_edt.html.py:71
+msgid "Issue is not exists"
+msgstr "Номер не існує"
+
+#: .\templates\staff.html.py:20
+msgid "Editorial sector"
+msgstr "Редакційний відділ"
+
+#: .\templates\editor\article_form.html.py:27
+#: .\templates\editor\login.html.py:73 .\templates\editor\new_issue.html.py:31
+msgid "Please correct the error below."
+msgstr "Виправте помилку"
+
+#: .\templates\editor\article_form.html.py:29
+#: .\templates\editor\login.html.py:75 .\templates\editor\new_issue.html.py:33
+msgid "Please correct the errors below."
+msgstr "Виправте помилки"
+
+#: .\templates\editor\article_form.html.py:73
+#: .\templates\editor\article_form.html.py:99
+msgid "Author"
+msgstr "Автор"
+
+#: .\templates\editor\article_form.html.py:76
+#: .\templates\editor\article_form.html.py:100
+msgid "by ukrainian"
+msgstr "укр."
+
+#: .\templates\editor\article_form.html.py:91
+msgid "expand authors"
+msgstr "розгорнути список авторів"
+
+#: .\templates\editor\article_form.html.py:105
+msgid "by english"
+msgstr "англ."
+
+#: .\templates\editor\article_form.html.py:110
+msgid "collapce authors"
+msgstr "згорнути список авторів"
+
+#: .\templates\editor\article_form.html.py:154
+msgid "Upload"
+msgstr "Завантажити"
+
+#: .\templates\editor\article_form_no_issue.html.py:8
+msgid "There is no issue. Please, create an issue firstly."
+msgstr "Номери відсутні. Спочатку створить новий номер."
+
+#: .\templates\editor\delete_artcl_exec.html.py:37
+#: .\templates\editor\issue_content_del.html.py:76
+msgid "Delete Article(s)"
+msgstr "Вилучити статтю"
+
+#: .\templates\editor\delete_artcl_exec.html.py:38
+msgid "Cancel"
+msgstr "Відмінити"
+
+#: .\templates\editor\delete_artcl_exec.html.py:42
+msgid "There are no articles selected"
+msgstr "Стаття не вибрана"
+
+#: .\templates\editor\editor_root.html.py:42
+msgid "New Issue"
+msgstr "Додати номер"
+
+#: .\templates\editor\editor_root.html.py:56
+msgid "Edit Article"
+msgstr "Редагувати статтю"
+
+#: .\templates\editor\editor_root.html.py:63
+msgid "Delete Article"
+msgstr "Вилучити статтю"
+
+#: .\templates\editor\editor_root.html.py:70
+msgid "Quit"
+msgstr "Вийти"
+
+#: .\templates\editor\issue_content_edt.html.py:60
+msgid "edit article"
+msgstr "редагувати статтю"
+
+#: .\templates\editor\login.html.py:33
+msgid "Editor of the Publications Database"
+msgstr "Редагування бази данних публікацій"
+
+#: .\templates\editor\login.html.py:55
+msgid "Sign in"
+msgstr "Увійти"
+
+#: .\templates\editor\login.html.py:99
+msgid "Password:"
+msgstr "Пароль"
+
+#: .\templates\editor\login.html.py:105
+msgid "Log in"
+msgstr "Увійти"
+
+#: .\templates\editor\new_issue.html.py:60
+msgid "Add Issue"
+msgstr "Додати Номер"
+
+#~ msgid "article text"
+#~ msgstr "текст статті"

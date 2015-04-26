@@ -1,0 +1,157 @@
+{% extends "editor/editor_root.html" %}
+{% load i18n %}
+{% load custom_filters %}
+{% block content %}
+<script type="text/javascript">
+ function unhide(divID) {
+     var item = document.getElementById(divID);
+     if (item) {
+         item.className=(item.className=='hidden')?'unhidden':'hidden';
+     }
+}
+ </script>
+    <br>
+    {% if messages %}
+    <ul class="messagelist">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                {{ message }}
+            </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if form.errors and not form.non_field_errors %}
+        <p class="errornote">
+        {% if form.errors.items|length == 1 %}
+            {% trans "Please correct the error below." %}
+        {% else %}
+            {% trans "Please correct the errors below." %}
+        {% endif %}
+        </p>
+    {% endif %}
+
+    {% if form.non_field_errors%}
+        {% for error in form.non_field_errors %}
+        <p class="errornote">
+            {{ error }}
+        </p>
+        {% endfor %}
+    {% endif %}
+
+    <p>     
+        <strong style="font-size: 14px; color: rgb(0, 0, 0);">
+            {# <b>{{ caption }}:</b> <br/> #} 
+            {% if err_warning %}
+                <b class="errorlist"> {{ err_warning }} </b>
+            {% endif %}       
+        </strong>
+    </p>
+ 
+     <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <fieldset>
+            <div class="fieldWrapper">
+                {{ form.issue_year_num.errors }}
+                <b>{{ form.issue_year_num.label_tag }}:</b> {{ form.issue_year_num }}
+            </div>
+        
+            <div class="fieldWrapper">
+                {{ form.rubric.errors }}
+                <b>{{ form.rubric.label_tag }}:</b> {{ form.rubric }}
+            </div>
+        </fieldset>
+        <br/>
+
+{#*** authors list ***#}      
+{% autoescape on %}
+        <section>
+            
+        {% with form.visible_fields|slice:"2:74" as formslice %}
+        <fieldset>
+        <legend><b>{% trans "Author"%} 1</b></legend>
+
+
+        <p><b>{% trans "by ukrainian"%}</b></p>
+        {% for item in formslice %}
+            
+            
+            <div class="fieldWrapper">
+                {{ item.errors }}
+                {{ item.label_tag }}: {{ item }}
+            </div>
+            
+            
+            {% if forloop.counter|divisibleby:"6" %}
+            
+                </fieldset>
+                <div style="clear:both;">&nbsp;</div>
+                {% if forloop.counter == 18 %}
+                   <b><a href="javascript:unhide('authorList');">{% trans "expand authors" %}</a></b>
+                   <br/>
+                   <br/>
+                   <div id="authorList" class="hidden">
+                {% endif %}
+        
+                {% if not forloop.last %}
+                    <fieldset>
+                    <legend><b>{% trans "Author"%} {{ forloop.counter|divide:"6"|add:"1" }}</b></legend>
+                    <p><b>{% trans "by ukrainian"%}</b></p>
+        
+                {% endif %}
+        
+            {% elif forloop.counter|divisibleby:"3" %}
+                <p><b>{% trans "by english"%}</b></p>        
+            {% endif %}
+        
+        {% endfor %}
+     
+        <b><a href="javascript:unhide('authorList');">{% trans "collapce authors" %}</a></b>
+        
+        </div> {#end  hidden authors list#}
+        {% endwith %}
+        </section>
+{% endautoescape %}        
+{#*** end authors list ***#}      
+
+
+        <div style="clear:both;">&nbsp;</div>        
+        <fieldset>
+            <div>
+                {{ form.caption_uk.errors }}
+                <b>{{ form.caption_uk.label_tag }}&nbsp;:</b> {{ form.caption_uk }}
+            </div>
+            <br/>
+            <div>
+                {{ form.caption_en.errors }}
+                <b>{{ form.caption_en.label_tag }}&nbsp;:</b> {{ form.caption_en }}
+            </div>
+        </fieldset>
+        <div style="clear:both;">&nbsp;</div>        
+
+        <fieldset>
+        <div>
+            {{ form.abstract_uk.errors }}
+            <div><b>{{ form.abstract_uk.label_tag }}&nbsp;:</b></div> {{ form.abstract_uk }}
+        </div>
+        <br/>
+        <div>
+            {{ form.abstract_en.errors }}
+            <div><b>{{ form.abstract_en.label_tag }}&nbsp;:</b></div> {{ form.abstract_en }}
+        </div>
+        </fieldset>
+
+        <div style="clear:both;">&nbsp;</div>        
+
+        <div>
+            {{ form.article_file.errors }}
+            {{ form.article_file.label_tag }}: {{ form.article_file }}
+        </div>
+
+        <div style="clear:both;">&nbsp;</div>        
+
+        <input type="submit" value="{% trans "Upload" %}" />
+    </form>
+
+{% endblock %}

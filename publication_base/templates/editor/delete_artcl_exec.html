@@ -1,0 +1,46 @@
+{% extends "editor/issue_list.html" %}
+{% load i18n %}
+{% block issue_content %}
+<br>
+<p>     
+    <strong style="font-size: 14px; color: rgb(0, 0, 0);">
+        <b>{% trans "Issue N" %} {{ issue_number }} , {{ issue_year }} {% trans "year" %}</b>       
+    </strong>
+</p>
+
+<p style="text-align: center">
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+            <strong>{% trans "CONTENTS"%}</strong>
+        </span>
+    </span>
+</p>            
+
+{% if article_list %}
+<form action="" method="post"> {% csrf_token %}
+    {% for article in article_list %}
+        <input type="hidden" id="id_{{ article.id }}" name="artcl_{{ article.id }}" value="{{ article.id }}" />
+        <p class="article_caption">{{ article.caption }}</p>
+        {% if article.authors %}
+            <p class="article_authors">
+                {% for author in article.authors %}
+                    {{author}}
+                    {% if not forloop.last%},&nbsp; {% endif %}
+                {% endfor %}
+            </p>
+        {% else %}
+            <p>{% trans "unknown author"%}</p>
+        {% endif %}
+
+    {% endfor %}
+    
+    <input type="submit" name="confirm_yes" value="{% trans "Delete Article(s)" %}" />
+    <input type="submit" name="confirm_no" value="{% trans "Cancel" %}" />
+
+</form>    
+{% else %}
+    <p>{% trans "There are no articles selected"%}</p>
+{% endif %}
+
+{% endblock %}
+

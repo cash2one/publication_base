@@ -1,0 +1,25 @@
+Superuser: admin
+password:  nIMda  admin
+
+Доступ до бази даних: http://publication.it.knu.ua/phpmyadmin/ 
+login: publication_db; 
+pass: JYSK6uh89WxYtNre.
+
+server:
+91.202.128.140
+user: root
+pass: qwerty123
+
+heraldknu.pythonanywhere
+herald.knu@outlook.com
+off.603,4D
+
+Users
+Ф-т кибернетики
+Оксана Шкильняк: f_cybernetics  cyb-tics
+
+Сильвеструк: phys_math phys_math
+Богатырева: taapsd taapsd131101
+		pom Pom
+		cybernetics Cybernetics
+

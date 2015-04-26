@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//model/__init__.py=utf-8
+encoding//model/admin.py=utf-8
+encoding//model/data.py=utf-8
+encoding//model/generate_sql.py=utf-8
+encoding//model/models.py=utf-8
+encoding//model/populate_db_2.py=utf-8
+encoding//publication_base/__init__.py=utf-8
+encoding//publication_base/context_processors.py=utf-8
+encoding//publication_base/publ_forms.py=utf-8
+encoding//publication_base/settings.py=utf-8
+encoding//publication_base/urls.py=utf-8
+encoding//publication_base/views.py=utf-8
+encoding//publication_base/wsgi.py=utf-8

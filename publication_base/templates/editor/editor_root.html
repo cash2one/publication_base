@@ -1,0 +1,159 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link href="{{ STATIC_URL }}css/basic.css" rel="stylesheet" type="text/css" />
+        <title>Публікації КНУ</title>
+        <script type="text/javascript">
+            // Javascript function to go to a new page defined by a SELECT element
+            function goToPage(id) {
+              var node = document.getElementById(id);
+              var url_str = "";
+              // Check to see if valid node and if node is a SELECT form control
+              if( node && node.tagName == "SELECT" ) {
+                // Go to web page defined by the VALUE attribute of the OPTION element
+                
+                url_str = "/editor/{{ category }}/" +
+                    node.options[node.selectedIndex].value + "/{{action}}"
+
+                //alert(url_str);
+                window.location.href = url_str;
+              } // endif
+            }
+        </script>
+    </head>
+    
+  <body>
+    <div id="wrapper">
+        <!-- languages bar-->
+        <div id="top2">
+            <br clear="all" />
+        </div><!-- top -->
+
+    <div id="menu_wrapper">
+        <div style="float: left;">    
+            <ul id="menu">
+                    <li
+                        {% ifequal action 'new_issue'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/editor/{{ category }}/{{edition_alias}}/new_issue">{% trans "New Issue" %}</a>
+                    </li>
+                    <li 
+                        {% ifequal action 'new_article'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/editor/{{ category }}/{{edition_alias}}/new_article">{% trans "New Article" %}</a>
+                    </li>
+                    <li
+                        {% ifequal action 'edit_article'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/editor/{{ category }}/{{edition_alias}}/edit_article">{% trans "Edit Article" %}</a>
+                    </li>
+                    <li
+                        {% ifequal action 'delete_article'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/editor/{{ category }}/{{edition_alias}}/delete_article">{% trans "Delete Article" %}</a>
+                    </li>
+                    <li
+                        {% ifequal action 'quit'%}
+                            id="act"        
+                        {% endifequal %}
+                    >
+                        <a href="/logout">{% trans "Quit" %}</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div style="float: left; margin-left:25px; margin-top:5px;">
+                <form name=menu_form>
+                    <label for="allowed_editions"><b>{% trans "Edition" %}:&nbsp;</b></label>
+                    <select id="allowed_editions" onChange="javascript:goToPage('allowed_editions');">
+                        {% for edition in allowed_editions_lst %}
+                            <option 
+                            {% ifequal edition.edition_alias edition_alias %}
+                                selected        
+                            {% endifequal %}
+                            value="{{edition.edition_alias}}"> {{edition.edition_abbrev}} </option>
+                        {% endfor %}                    
+                    </select>
+                </form>
+            </div>          
+            
+            <br clear="all" />
+            
+    </div>  <!-- menu_wrapper -->       
+        
+        <div id="header">
+            <!-- <div id="column_2"> -->
+                <p style="text-align: center">
+                    <span style="color: rgb(0, 0, 0); ">
+                        <span style="font-size: 18px">
+                            <strong>
+                                {% if category == "herald"%}
+                                    {% trans "Bulletin" %}
+                                {% elif category == "journal"%}
+                                    {% trans "Journal" %}
+                                {% elif category == "conference"%}
+                                    {% trans "Conference" %}
+                                {% else%}
+                                    {% trans "Publication" %}
+                                {% endif %}
+                            </strong>
+                        </span>
+                    </span>
+                </p>
+                <p style="text-align: center">
+                    <span style="color: rgb(0, 0, 0); ">
+                        <span style="font-size: 18px">
+                            <strong>{% trans "of Taras Shevchenko National University of Kyiv" %}</strong>
+                        </span>
+                    </span>
+                </p>
+                <p style="text-align: center">
+                    <span style="color: rgb(0, 0, 0); ">
+                        <span style="font-size: 18px">
+                            <strong>
+                                {% if category == "herald"%}
+                                    {% trans "Series" %} {{ edition_name|lower }}
+                                {% elif category == "journal"%}
+                                    {{ edition_name|capfirst }}
+                                {% elif category == "conference"%}
+                                    {{ edition_name|capfirst }}
+                                {% else%}
+                                    {{ edition_name|capfirst }}
+                                {% endif %}
+                            </strong>
+                        </span>
+                    </span>
+                </p>
+                <hr style="border: 1px solid #de2c2c;">
+            <!-- </div> --> <!-- column_2 -->
+        </div> <!-- header -->
+                <div id="static">
+
+                    {% block content %}{% endblock %}
+                
+                </div><!-- static -->
+            <!-- </div> --> <!-- column_2 -->   
+        <!-- </div> --> <!-- main -->
+        
+        <div id="bottom">
+                <p style="text-align: left">
+                    &nbsp;&nbsp;&nbsp;&copy; 2013 
+                    {% trans "Taras Shevchenko National University of Kyiv" %}.&nbsp; 
+                    {% trans "Support" %}:&nbsp;{% trans "Sergey Polyakov"%}.&nbsp;
+                    {% trans "Email" %}:&nbsp;<a href="mailto:sergey.a.polyakov@gmail.com">sergey.a.polyakov@gmail.com</a>                   
+                </p>
+        </div><!-- bottom -->
+    </div><!-- wrapper -->
+
+</body>
+</html>

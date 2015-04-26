@@ -1,0 +1,30 @@
+{% extends "edition_list_root.html" %}
+{% load i18n %}
+{% load custom_filters %}
+{% block content %}
+    <br>
+         
+
+<!--        <strong style="font-size: 14px; color: rgb(0, 0, 0);"> -->
+            {%trans "Edition"%}: ({%trans "issue count, article count"%})<br/><br/>
+            {% for edition in edition_list%}
+              
+              <div style="width:240px;  height:380px; font-size:90%; text-align:center; float:left; vertical-align: top;">
+                  <p>
+                      <a href="/{{LANGUAGE_CODE}}/edition/{{ category }}/{{edition.edition_alias}}">
+                          <img src="{{ MEDIA_URL }}{{ edition.edition_alias|get_edition_cover }}" border="0"/>
+                         <div>
+                         {{forloop.counter}}.&nbsp;      
+                         {{ edition.edition_name|capfirst }}
+                      ({{edition.issue_cnt}},&nbsp;{{edition.artcl_cnt}})
+                         </div>
+                      </a>&nbsp;
+                      
+                  </p>
+              </div>
+            
+            {% endfor %}
+        <div style="clear:both;"> </div>
+<!--        </strong> -->
+    
+{% endblock %}

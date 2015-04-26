@@ -1,0 +1,75 @@
+{% extends "publication.html" %}
+{% load i18n %}
+{% block issue_content %}
+	<br>
+{% ifnotequal issue_number "0" %}	
+	<p>		
+		<strong style="font-size: 14px; color: rgb(0, 0, 0);">
+			<b>{% trans "Issue N" %} {{ issue_number }} , {{ issue_year }} {% trans "year" %}</b>		
+		</strong>
+	</p>
+	
+	<p style="text-align: center">
+		<span style="color: rgb(0, 0, 0); ">
+			<span style="font-size: 14px">
+				<strong>{% trans "CONTENTS"%}</strong>
+			</span>
+		</span>
+	</p>			
+
+    {% if article_list %}
+        {% for article in article_list %}
+        	{% ifchanged %}
+    			<p style="text-align: center">
+    				<span style="color: rgb(0, 0, 0); ">
+    					<span style="font-size: 14px">
+    						<strong>{{ article.rubric_name }}</strong>
+    					</span>
+    				</span>
+    			</p>			
+        	{% endifchanged %}
+
+<div >     
+<div style="float: left;">
+            <p class="article_link">
+                <a class="icon_link" href="{{ MEDIA_URL }}docs/{{ edition_alias }}/{{ issue_year }}_{{ issue_number }}/{{article.file_name}}"> 
+                    {# {% trans "article text"%} #}
+                    
+                    {% if IS_PYTHON_MAGICK %}                    
+                        <img src="{{ MEDIA_URL }}docs/{{ edition_alias }}/{{ issue_year }}_{{ issue_number }}/{{article.file_name|slice:":-4"}}.jpg" border="0"/>
+                    {% else %}    
+                        <img src="{{ STATIC_URL }}images/pdf.png" border="0"/> 
+                    {% endif %}     
+                </a>
+            </p>            
+</div>
+
+<div style="padding-top:1px;">    
+    		<p class="article_caption">{{ article.caption }}</p>
+    		{% if article.authors_list %}
+    			<p class="article_authors">
+    				{% for author in article.authors_list %}
+    					{{author.full_name}}
+    					{% if not forloop.last%},&nbsp; {% endif %}
+    				{% endfor %}
+    			</p>
+    		{% else %}
+    			<p>{% trans "unknown author"%}</p>
+    		{% endif %}
+    
+    		<p class="article_annot">
+    			{{article.abstract}}
+    		</p>
+</div>    			
+</div>   
+    	{% endfor %}
+    
+    {% else %}
+        <p>{% trans "issue is empty"%}</p>
+    {% endif %}
+{% else %}
+   <p>{% trans "Issue is not exists"%} Num: {{ issue_number }} , Year: {{ issue_year }}</p>
+{% endifnotequal %}
+
+{% endblock %}
+

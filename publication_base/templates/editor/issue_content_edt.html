@@ -1,0 +1,75 @@
+{% extends "editor/issue_list.html" %}
+{% load i18n %}
+{% block issue_content %}
+    <br>
+{% if messages %}
+<ul class="messagelist">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+            {{ message }}
+        </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% ifnotequal issue_number "0" %}   
+    <p>     
+        <strong style="font-size: 14px; color: rgb(0, 0, 0);">
+            <b>{% trans "Issue N" %} {{ issue_number }} , {{ issue_year }} {% trans "year" %}</b>       
+        </strong>
+    </p>
+    
+    <p style="text-align: center">
+        <span style="color: rgb(0, 0, 0); ">
+            <span style="font-size: 14px">
+                <strong>{% trans "CONTENTS"%}</strong>
+            </span>
+        </span>
+    </p>            
+
+    {% if article_list %}
+        {% for article in article_list %}
+            {% ifchanged %}
+                <p style="text-align: center">
+                    <span style="color: rgb(0, 0, 0); ">
+                        <span style="font-size: 14px">
+                            <strong>{{ article.rubric_name }}</strong>
+                        </span>
+                    </span>
+                </p>            
+            {% endifchanged %}
+    
+    
+            <p class="article_caption">{{ article.caption }}</p>
+            {% if article.authors_list %}
+                <p class="article_authors">
+                    {% for author in article.authors_list %}
+                        {{author.full_name}}
+                        {% if not forloop.last%},&nbsp; {% endif %}
+                    {% endfor %}
+                </p>
+            {% else %}
+                <p>{% trans "unknown author"%}</p>
+            {% endif %}
+    
+            <p class="article_annot">
+                {{article.abstract}}
+            </p>    
+            <p class="article_link">
+                <a class="icon_link" href="/{{root_url}}/{{category}}/{{ edition_alias }}/{{ action }}/{{ issue_year }}/{{ issue_number }}/{{ article.id }}"> 
+                    <strong>{% trans "edit article"%} </strong><img src="{{ STATIC_URL }}images/bullet_edit.png" border="0"/> 
+                </a>
+            </p>
+            <br/>            
+    
+        {% endfor %}
+    
+    {% else %}
+        <p>{% trans "issue is empty"%}</p>
+    {% endif %}
+{% else %}
+   <p>{% trans "Issue is not exists"%} Num: {{ issue_number }} , Year: {{ issue_year }}</p>
+{% endifnotequal %}
+
+{% endblock %}
+

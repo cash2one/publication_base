@@ -1,0 +1,100 @@
+﻿{% extends "edition_root.html" %}
+{% load i18n %}
+{% block content %}
+	<br>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Edition Name" %}:&nbsp; {{ ed.edition_name}}
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); font-size: 14px;">
+         {% trans "Fields of Science" %}:&nbsp; 
+            {% for fos in fos_set %}
+                <span style="color: rgb(0, 0, 0); font-size: 14px;">
+                    {{ fos.fos_name }}{% if not forloop.last%},{% endif %}
+                </span>
+            {% endfor %}
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Subject Matter" %}:&nbsp; {{ ed.subject_matter}}
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Foundation Year" %}:&nbsp; {{ ed.edition.foundation_year}}
+        </span>
+    </span>
+    </p>
+	
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Issues per Year" %}:&nbsp; {{ ed.edition.issues_by_year}}
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Government Certificate" %}:&nbsp; {{ ed.edition.gov_certificate_num}}, {{ ed.edition.gov_certificate_date}} 
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "VAC Certificate" %}:&nbsp; {{ ed.edition.vac_certificate_num}}, {{ ed.edition.vac_certificate_date}}
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "ISSN" %}:&nbsp; {{ ed.edition.ISSN}}
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Phone" %}:&nbsp; {{ ed.edition.phone}}
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Email" %}:&nbsp; {{ ed.edition.email}}
+        </span>
+    </span>
+    </p>
+
+    <p>
+    <span style="color: rgb(0, 0, 0); ">
+        <span style="font-size: 14px">
+         {% trans "Address" %}:&nbsp;{{ ed.address}}
+        </span>
+    </span>
+    </p>
+
+
+{% endblock %}
+
+

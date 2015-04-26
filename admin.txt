@@ -1,0 +1,21 @@
+Hello Sergey,
+
+
+
+FTP User: wwwbul
+
+Pass: vV5NQhZrCU9cVbYZ
+
+
+
+
+
+MySQL:
+
+phpMyAdmin: http://mysql.univ.kiev.ua
+
+Host: localhost
+
+User/DB: wwwbulletin
+
+Password: ZvssUaCUjea4DfyP
